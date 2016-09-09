@@ -5,7 +5,7 @@ El proyecto contiene un script compile_and_test que compila y ejecuta el test co
 ```
 cmake .
 make
-./eads-m4-gtest-project --gtest_output=xml
+./eads-m4-gtest-project --gtest_output=xml:gtestresults.xml
 ```
 
 Para realizar el test, ejecutar el siguiente comando desde el directorio raíz del proyecto:
@@ -19,7 +19,7 @@ Esto añade el directorio actual (la raíz del proyecto) como un volumen, y fija
 Se ha implementado el script compile_test porque el siguiente comando provocaba un error en el make:
 
 ```
-  docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp ilugi/eads-m4-gtest-project cmake . && make && ./eads-m4-gtest-project --gtest_output=xml
+  docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp ilugi/eads-m4-gtest-project cmake . && make && ./eads-m4-gtest-project --gtest_output=xml:gtestresults.xml
 ```
   
 Curiosamente, sin embargo, esa misma línea de comando ejecutada en una shell interactiva dentro del propio contenedor no daba ningún error. 

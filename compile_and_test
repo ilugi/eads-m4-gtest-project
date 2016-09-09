@@ -2,4 +2,4 @@
 
 cmake .
 make
-./eads-m4-gtest-project_test --gtest_output=xml
+./eads-m4-gtest-project_test --gtest_output=xml:gtestresults.xml
